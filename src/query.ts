@@ -11,5 +11,5 @@ export async function createPackage(query: string) {
     headers: myHeaders,
     body: graphql,
   };
-  return await fetch("http://localhost:8080/graphql", requestOptions)
+  return await fetch("http://localhost:8080", requestOptions)
 }
