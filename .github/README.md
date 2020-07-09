@@ -4,16 +4,16 @@
     <img src="../assets/logo_light.png" alt="nest.land logo (light version)" width="110">
   </a>
 
-  <h3 align="center">nest.land</h3>
+  <h3 align="center">yolk</h3>
 
   <p align="center">
-    A module registry for Deno, on the blockchain
+    nest.land's official API client library
  </p>
 </p>
 
-## nest.land template
+## yolk
 
-A template for nest.land repositories. Remove this sentence and change this header to describe the project this template is being used for.
+Yolk is nest.land's official API client library for Deno.
 
 ## What is nest.land?
 
