@@ -11,6 +11,7 @@
  </p>
 </p>
 
+> Note: This library is a work in progress until the [new API](https://github.com/nestdotland/api) for nest.land is deployed.
 ## yolk
 
 Yolk is nest.land's official API client library for Deno.
