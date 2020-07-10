@@ -1,9 +1,9 @@
 {
-  "name": "yolk",
-  "version": "1.0.0",
-  "description": "Nest.land API Client",
+  "name": "@nestdotland/yolk",
+  "version": "0.1.0-rc.1",
+  "description": "The nest.land API Client for Node, Deno and the Browser.",
   "main": "./dist/index.js",
-  "author": "Divy Srivastava",
+  "author": "Divy Srivastava <dj.srivastava23@gmail.com>",
   "license": "MIT",
   "private": false,
   "scripts": {
