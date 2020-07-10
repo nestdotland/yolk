@@ -11,5 +11,6 @@ export async function performQuery(query: string) {
     headers: myHeaders,
     body: graphql,
   };
-  return await fetch("http://localhost:8080", requestOptions)
+  let res = await fetch("http://localhost:8080", requestOptions);
+  return await res.json();
 }

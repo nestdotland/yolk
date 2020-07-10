@@ -33,3 +33,10 @@ export interface NewModule {
   locked: boolean;
   malicious: boolean;
 }
+
+export interface PublicUser {
+  name: string;
+  normalizedName: string;
+  packageNames: string[];
+  createdAt: string;
+}

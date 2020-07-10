@@ -36,31 +36,17 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 exports.__esModule = true;
-exports.performQuery = void 0;
-var myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
-function performQuery(query) {
+exports.publish = void 0;
+var query_1 = require("../query");
+function publish(_a) {
+    var name = _a.name, apiKey = _a.apiKey, description = _a.description, repository = _a.repository, unlisted = _a.unlisted, locked = _a.locked, malicious = _a.malicious;
     return __awaiter(this, void 0, void 0, function () {
-        var graphql, requestOptions, res;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0:
-                    graphql = JSON.stringify({
-                        query: query,
-                        variables: {}
-                    });
-                    requestOptions = {
-                        method: 'POST',
-                        headers: myHeaders,
-                        body: graphql
-                    };
-                    return [4 /*yield*/, fetch("http://localhost:8080", requestOptions)];
-                case 1:
-                    res = _a.sent();
-                    return [4 /*yield*/, res.json()];
-                case 2: return [2 /*return*/, _a.sent()];
+        return __generator(this, function (_b) {
+            switch (_b.label) {
+                case 0: return [4 /*yield*/, query_1.performQuery("\n      mutation {\n        createPackage(newPackage: {\n            name: \"" + name + "\"\n            apiKey: \"" + apiKey + "\"\n            description: \"" + description + "\"\n            repository: \"" + repository + "\"\n            unlisted: " + unlisted + "\n            locked: " + locked + "\n            malicious: " + malicious + "\n        }) {\n          ok\n          msg\n        }\n      }\n  ")];
+                case 1: return [2 /*return*/, _b.sent()];
             }
         });
     });
 }
-exports.performQuery = performQuery;
+exports.publish = publish;

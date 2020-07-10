@@ -1,1 +1,1 @@
-export * from "./publish.ts";
+export * from "./mutations/publish.ts";

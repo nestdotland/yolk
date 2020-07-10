@@ -1,1 +1,1 @@
-export * from "./publish";
+export * from "./mutations/publish";

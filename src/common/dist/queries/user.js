@@ -36,31 +36,16 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 exports.__esModule = true;
-exports.performQuery = void 0;
-var myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
-function performQuery(query) {
+exports.user = void 0;
+var query_1 = require("../query");
+function user(apiKey) {
     return __awaiter(this, void 0, void 0, function () {
-        var graphql, requestOptions, res;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0:
-                    graphql = JSON.stringify({
-                        query: query,
-                        variables: {}
-                    });
-                    requestOptions = {
-                        method: 'POST',
-                        headers: myHeaders,
-                        body: graphql
-                    };
-                    return [4 /*yield*/, fetch("http://localhost:8080", requestOptions)];
-                case 1:
-                    res = _a.sent();
-                    return [4 /*yield*/, res.json()];
-                case 2: return [2 /*return*/, _a.sent()];
+                case 0: return [4 /*yield*/, query_1.performQuery("\n      query {\n        user(apiKey: \"" + apiKey + "\") {\n          name\n          normalizedName\n          apiKey\n          packageNames\n          createdAt\n        }\n      }\n  ")];
+                case 1: return [2 /*return*/, _a.sent()];
             }
         });
     });
 }
-exports.performQuery = performQuery;
+exports.user = user;
