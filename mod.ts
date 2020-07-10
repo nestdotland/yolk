@@ -1,3 +1,1 @@
-import publish from "./src/deno/index.ts";
-
-publish();
+export * from "./src/deno/index.ts";

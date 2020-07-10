@@ -156,9 +156,9 @@
         "signature": "5c487f0a67f69ef95b5523d9e7eee940a400614ea06e7022f816be3116b46d13",
         "affectsGlobalScope": false
       },
-      "../src/index.ts": {
-        "version": "7c9206541a41fa6ac46d2781650b553d6018ea5dcbe4fff8a3bae139e43d2522",
-        "signature": "7c9206541a41fa6ac46d2781650b553d6018ea5dcbe4fff8a3bae139e43d2522",
+      "../src/queries/user.ts": {
+        "version": "0e9e46d8a9568c7e46a400fca32c0edfbf28c8774935af588a8c07f6811d9ae3",
+        "signature": "01245ee725e11b394090bfe46e3bb61e84f6eeaa7795265e75f0400bde3d0f4c",
         "affectsGlobalScope": false
       },
       "../src/queries/module.ts": {
@@ -166,9 +166,9 @@
         "signature": "e485f63314a2fc19244788f2457d4115fd0c216d353b0dd09c929e2fb83c62a5",
         "affectsGlobalScope": false
       },
-      "../src/queries/user.ts": {
-        "version": "0e9e46d8a9568c7e46a400fca32c0edfbf28c8774935af588a8c07f6811d9ae3",
-        "signature": "01245ee725e11b394090bfe46e3bb61e84f6eeaa7795265e75f0400bde3d0f4c",
+      "../src/index.ts": {
+        "version": "48262e515c5fba98268c326c0d28d39646c92e5a2f22aca0fb207f1d4baed1cc",
+        "signature": "1a50ff5d51c7fbe95ce4cff6b1c71fdbce60c0b12e3d0cfd38fe17cfb6583810",
         "affectsGlobalScope": false
       },
       "../node_modules/@types/comment-json/index.d.ts": {
@@ -1207,7 +1207,9 @@
         "../node_modules/@types/node/ts3.2/process.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts",
-        "../src/mutations/publish.ts"
+        "../src/mutations/publish.ts",
+        "../src/queries/module.ts",
+        "../src/queries/user.ts"
       ],
       "../src/mutations/publish.ts": [
         "../node_modules/@types/node/fs.d.ts",
@@ -2008,7 +2010,9 @@
         "../node_modules/@types/node/util.d.ts"
       ],
       "../src/index.ts": [
-        "../src/mutations/publish.ts"
+        "../src/mutations/publish.ts",
+        "../src/queries/module.ts",
+        "../src/queries/user.ts"
       ],
       "../src/mutations/publish.ts": [
         "../src/types.ts"

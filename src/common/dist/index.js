@@ -10,4 +10,8 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);
 };
 exports.__esModule = true;
+// Mutations
 __exportStar(require("./mutations/publish"), exports);
+// Queries
+__exportStar(require("./queries/user"), exports);
+__exportStar(require("./queries/module"), exports);
