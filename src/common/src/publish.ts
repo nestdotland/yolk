@@ -1,19 +1,21 @@
-import { createPackage } from "./query";
+import { performQuery } from "./query";
+import { NewModule } from "./types";
 
-export default async function publish() {
-  console.log(await createPackage(`
+export async function publish({ name, apiKey, description, repository, unlisted, locked, malicious }: NewModule) {
+  return await performQuery(`
       mutation {
         createPackage(newPackage: {
-            name: "autopilot"
-            apiKey: "haha"
-            description: "Cross-platform desktop automation"
-            repository: "https://github.com/divy-work/autopilot-deno"
-            unlisted: false
-            locked: false
-            malicious: false
+            name: "${name}"
+            apiKey: "${apiKey}"
+            description: "${description}"
+            repository: "${repository}"
+            unlisted: ${unlisted}
+            locked: ${locked}
+            malicious: ${malicious}
         }) {
           ok
+          msg
         }
       }
-  `));
+  `);
 }

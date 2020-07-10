@@ -1,7 +1,7 @@
 var myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
 
-export async function createPackage(query: string) {
+export async function performQuery(query: string) {
   var graphql = JSON.stringify({
     query,
     variables: {}

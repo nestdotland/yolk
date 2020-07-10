@@ -141,19 +141,29 @@
         "signature": "89bf2b7a601b73ea4311eda9c41f86a58994fec1bee3b87c4a14d68d9adcdcbd",
         "affectsGlobalScope": true
       },
+      "../mod.ts": {
+        "version": "c16045f0c4ad4b2087e1f6da63f73af2532d74edb7a4b7fb5bcb03f5ff6fa242",
+        "signature": "132141921a6a37fcbf6da54528e7e52058ed2745714ee8a50e1210959ec47e40",
+        "affectsGlobalScope": false
+      },
       "../src/query.ts": {
-        "version": "03e01dbe2679d145f66a904bdf5f0bb7795283390b9fe60cd1fb833142ba4b0a",
-        "signature": "9c5ab05ee19bb22e2f8765896d5f1ed98eb58db0e8b5d72ff5fffc89c94293bf",
+        "version": "e1a5d5d960f10b83651beefa9ed38cd68211534a140fdfcdd431ce08c59eddbe",
+        "signature": "23052fa3b905bc5cdd20643f69472517ea9b83710916f8920fbf2d7c40b671f5",
+        "affectsGlobalScope": false
+      },
+      "../src/types.ts": {
+        "version": "0b8061be146326ff0c96b57f5b24718117eeea49bd44dccd088059673ca62994",
+        "signature": "a382148f69c6c44a8ff755ddd926a6f764a87a55ed93edfd470f13cb85df035a",
         "affectsGlobalScope": false
       },
       "../src/publish.ts": {
-        "version": "19ac565171da9b3e8252ffac85b4b588761d5cf8a88492a3310a014a4f312f9f",
-        "signature": "ecb89e89faf22425bfbb91c0500cd82d6214f3d65a1cca66008d56bb47f9371f",
+        "version": "c8354cf6a2d634c031c3b579aa87231386a8df90aed2ffaca9d5c1e60bcc8e9a",
+        "signature": "61c3c061f3e033f644400165a9cd77f1cc0a62e2651ca225f5bb558092db3b02",
         "affectsGlobalScope": false
       },
       "../src/index.ts": {
-        "version": "a9abdf852fc2ead9e77414678242486adb5c17b60a917d85572a39d5bba67713",
-        "signature": "a9abdf852fc2ead9e77414678242486adb5c17b60a917d85572a39d5bba67713",
+        "version": "367cd7e29752f8e312cc50208bf7718be16b2478dc8019a0091329d87a35453b",
+        "signature": "367cd7e29752f8e312cc50208bf7718be16b2478dc8019a0091329d87a35453b",
         "affectsGlobalScope": false
       },
       "../node_modules/@types/comment-json/index.d.ts": {
@@ -443,6 +453,14 @@
       "configFilePath": "../tsconfig.json"
     },
     "referencedMap": {
+      "../mod.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/process.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/process.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
       "../node_modules/@types/comment-json/index.d.ts": [
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/process.d.ts",
@@ -1201,9 +1219,18 @@
         "../node_modules/@types/node/ts3.2/process.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts",
-        "../src/query.ts"
+        "../src/query.ts",
+        "../src/types.ts"
       ],
       "../src/query.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/process.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/process.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
+      "../src/types.ts": [
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/process.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
@@ -1966,6 +1993,9 @@
       "../src/index.ts": [
         "../src/publish.ts"
       ],
+      "../src/publish.ts": [
+        "../src/types.ts"
+      ],
       "../../../../../node_modules/@types/long/index.d.ts": [
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/process.d.ts",
@@ -1976,6 +2006,19 @@
       ]
     },
     "semanticDiagnosticsPerFile": [
+      [
+        "../mod.ts",
+        [
+          {
+            "file": "../mod.ts",
+            "start": 169,
+            "length": 22,
+            "messageText": "An import path cannot end with a '.ts' extension. Consider importing './deno_dist/index' instead.",
+            "category": 1,
+            "code": 2691
+          }
+        ]
+      ],
       "../node_modules/@types/comment-json/index.d.ts",
       "../node_modules/@types/node/async_hooks.d.ts",
       "../node_modules/@types/node/base.d.ts",
@@ -2060,6 +2103,7 @@
       "../src/index.ts",
       "../src/publish.ts",
       "../src/query.ts",
+      "../src/types.ts",
       "../../../../../node_modules/@types/long/index.d.ts"
     ]
   },

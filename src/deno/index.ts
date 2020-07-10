@@ -1,3 +1,3 @@
-import publish from "../common/deno_dist/index.ts";
+import { publish } from "../common/deno_dist/index.ts";
 
-publish()
+publish();

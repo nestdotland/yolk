@@ -36,6 +36,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 exports.__esModule = true;
+exports.publish = void 0;
 var query_1 = require("./query");
 function publish(_a) {
     var name = _a.name, apiKey = _a.apiKey, description = _a.description, repository = _a.repository, unlisted = _a.unlisted, locked = _a.locked, malicious = _a.malicious;
@@ -48,4 +49,4 @@ function publish(_a) {
         });
     });
 }
-exports["default"] = publish;
+exports.publish = publish;

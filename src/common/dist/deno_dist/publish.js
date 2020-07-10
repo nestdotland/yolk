@@ -36,14 +36,18 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 exports.__esModule = true;
-var query_1 = require("./query");
-function publish(_a) {
-    var name = _a.name, apiKey = _a.apiKey, description = _a.description, repository = _a.repository, unlisted = _a.unlisted, locked = _a.locked, malicious = _a.malicious;
+var query_ts_1 = require("./query.ts");
+function publish() {
     return __awaiter(this, void 0, void 0, function () {
-        return __generator(this, function (_b) {
-            switch (_b.label) {
-                case 0: return [4 /*yield*/, query_1.performQuery("\n      mutation {\n        createPackage(newPackage: {\n            name: \"" + name + "\"\n            apiKey: \"" + apiKey + "\"\n            description: \"" + description + "\"\n            repository: \"" + repository + "\"\n            unlisted: " + unlisted + "\n            locked: " + locked + "\n            malicious: " + malicious + "\n        }) {\n          ok\n          msg\n        }\n      }\n  ")];
-                case 1: return [2 /*return*/, _b.sent()];
+        var _a, _b;
+        return __generator(this, function (_c) {
+            switch (_c.label) {
+                case 0:
+                    _b = (_a = console).log;
+                    return [4 /*yield*/, query_ts_1.createPackage("\n      mutation {\n        createPackage(newPackage: {\n            name: \"autopilot\"\n            apiKey: \"haha\"\n            description: \"Cross-platform desktop automation\"\n            repository: \"https://github.com/divy-work/autopilot-deno\"\n            unlisted: false\n            locked: false\n            malicious: false\n        }) {\n          ok\n        }\n      }\n  ")];
+                case 1:
+                    _b.apply(_a, [_c.sent()]);
+                    return [2 /*return*/];
             }
         });
     });
