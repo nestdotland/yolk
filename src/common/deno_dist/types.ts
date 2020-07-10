@@ -1,5 +1,3 @@
-export type Query = User | Module;
-
 export interface User {
   name: string;
   normalizedName: string;
@@ -32,4 +30,11 @@ export interface NewModule {
   unlisted: boolean;
   locked: boolean;
   malicious: boolean;
+}
+
+export interface PublicUser {
+  name: string;
+  normalizedName: string;
+  packageNames: string[];
+  createdAt: string;
 }

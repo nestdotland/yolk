@@ -36,38 +36,27 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 exports.__esModule = true;
-exports.users = exports.userByName = exports.user = void 0;
+exports.modules = exports.moduleByName = void 0;
 var query_1 = require("../query");
-function user(apiKey) {
+function moduleByName(name) {
     return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, query_1.performQuery("\n      query {\n        user(apiKey: \"" + apiKey + "\") {\n          name\n          normalizedName\n          apiKey\n          packageNames\n          createdAt\n        }\n      }\n  ")];
+                case 0: return [4 /*yield*/, query_1.performQuery("\n      query {\n        package(name: \"" + name + "\") {\n          name\n          normalizedName\n          owner\n          description\n          repository\n          latestVersion\n          latestStableVersion\n          packageUploadNames\n          locked\n          malicious\n          unlisted\n          updatedAt\n          createdAt\n        }\n      }\n  ")];
                 case 1: return [2 /*return*/, _a.sent()];
             }
         });
     });
 }
-exports.user = user;
-function userByName(name) {
+exports.moduleByName = moduleByName;
+function modules() {
     return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, query_1.performQuery("\n      query {\n        userByName(name: \"" + name + "\") {\n          name\n          normalizedName\n          packageNames\n          createdAt\n        }\n      }\n  ")];
+                case 0: return [4 /*yield*/, query_1.performQuery("\n      query {\n        modules {\n          name\n          normalizedName\n          owner\n          description\n          repository\n          latestVersion\n          latestStableVersion\n          packageUploadNames\n          locked\n          malicious\n          unlisted\n          updatedAt\n          createdAt\n        }\n      }\n  ")];
                 case 1: return [2 /*return*/, _a.sent()];
             }
         });
     });
 }
-exports.userByName = userByName;
-function users() {
-    return __awaiter(this, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, query_1.performQuery("\n      query {\n        users {\n          name\n          normalizedName\n          packageNames\n          createdAt\n        }\n      }\n  ")];
-                case 1: return [2 /*return*/, _a.sent()];
-            }
-        });
-    });
-}
-exports.users = users;
+exports.modules = modules;
