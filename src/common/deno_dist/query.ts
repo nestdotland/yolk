@@ -4,10 +4,10 @@ myHeaders.append("Content-Type", "application/json");
 export async function performQuery(query: string) {
   var graphql = JSON.stringify({
     query,
-    variables: {}
-  })
+    variables: {},
+  });
   var requestOptions = {
-    method: 'POST',
+    method: "POST",
     headers: myHeaders,
     body: graphql,
   };

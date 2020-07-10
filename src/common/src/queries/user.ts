@@ -15,7 +15,6 @@ export async function user(apiKey: string): Promise<User> {
   `);
 }
 
-
 export async function userByName(name: string): Promise<PublicUser> {
   return await performQuery(`
       query {

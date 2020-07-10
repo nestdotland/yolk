@@ -1,7 +1,10 @@
 import { performQuery } from "../query";
 import { NewModule } from "../types";
 
-export async function publish({ name, apiKey, description, repository, unlisted, locked, malicious }: NewModule) {
+export async function publish(
+  { name, apiKey, description, repository, unlisted, locked, malicious }:
+    NewModule,
+) {
   return await performQuery(`
       mutation {
         createPackage(newPackage: {
