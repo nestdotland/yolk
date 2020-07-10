@@ -1,5 +1,3 @@
-export type Query = User | Module;
-
 export interface User {
   name: string;
   normalizedName: string;
