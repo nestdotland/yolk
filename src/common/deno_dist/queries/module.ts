@@ -1,7 +1,7 @@
 import { performQuery } from "../query.ts";
-import { Module } from "../types.ts";
+import { Module, Result } from "../types.ts";
 
-export async function moduleByName(name: string): Promise<Module> {
+export async function moduleByName(name: string): Promise<Result<Module>> {
   return await performQuery(`
       query {
         package(name: "${name}") {
@@ -23,7 +23,7 @@ export async function moduleByName(name: string): Promise<Module> {
   `);
 }
 
-export async function modules(): Promise<Module[]> {
+export async function modules(): Promise<Result<Module[]>> {
   return await performQuery(`
       query {
         modules {

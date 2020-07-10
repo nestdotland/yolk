@@ -1,3 +1,9 @@
+export interface Result<T> {
+    data: T | null;
+    errors?: any;
+    error: any; 
+}
+
 export interface User {
   name: string;
   normalizedName: string;
