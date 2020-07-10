@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es3",
+        "lib": [
+            "es5",
+            "es2015",
+            "dom"
+        ],
+        "newLine": "LF",
+		"incremental": true,
+        "outDir": "./dist",
+        "noUnusedLocals": true,
+		"noUnusedParameters": true
+    },
+    "filesGlob": [
+        "src/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist"
+    ]
+}

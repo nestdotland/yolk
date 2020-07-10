@@ -1,5 +1,4 @@
-import { createPackage } from "./query.ts";
-import "./tarify.ts";
+import { createPackage } from "./query";
 
 export default async function publish() {
   console.log(await createPackage(`

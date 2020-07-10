@@ -1,0 +1,16 @@
+{
+  "name": "yolk",
+  "version": "1.0.0",
+  "description": "Nest.land API Client",
+  "main": "./dist/index.js",
+  "author": "Divy Srivastava",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "tsc && denoify"
+  },
+  "dependencies": {
+    "denoify": "^0.3.0",
+    "typescript": "^3.9.6"
+  }
+}
