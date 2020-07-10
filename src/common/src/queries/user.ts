@@ -28,3 +28,16 @@ export async function userByName(name: string): Promise<PublicUser> {
       }
   `);
 }
+
+export async function users(): Promise<PublicUser[]> {
+  return await performQuery(`
+      query {
+        users {
+          name
+          normalizedName
+          packageNames
+          createdAt
+        }
+      }
+  `);
+}
