@@ -1,7 +1,7 @@
 <br />
 <p align="center">
   <a href="https://nest.land/">
-    <img src="../assets/logo_light.png" alt="nest.land logo (light version)" width="110">
+    <img src="https://raw.githubusercontent.com/nestdotland/yolk/master/assets/logo_light.png" alt="nest.land logo (light version)" width="110">
   </a>
 
   <h3 align="center">yolk</h3>
