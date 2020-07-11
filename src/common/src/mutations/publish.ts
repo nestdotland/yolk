@@ -7,7 +7,7 @@ export async function publish(
 ) {
   return await performQuery(`
       mutation {
-        createPackage(newPackage: {
+        createModule(newPackage: {
             name: "${name}"
             apiKey: "${apiKey}"
             description: "${description}"

@@ -4,7 +4,7 @@ import { Module, Result } from "../types";
 export async function moduleByName(name: string): Promise<Result<Module>> {
   return await performQuery(`
       query {
-        package(name: "${name}") {
+        module(name: "${name}") {
           name
           normalizedName
           owner
