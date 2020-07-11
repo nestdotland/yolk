@@ -1,13 +1,16 @@
 import { performQuery } from "../query.ts";
-import { NewModule } from "../types.ts";
+import { NewModule, PackageDetails } from "../types.ts";
+
 
 export async function publish(
   { name, apiKey, description, repository, unlisted, locked, malicious }:
     NewModule,
+    tarFile: any,
+    packageDetails: PackageDetails
 ) {
-  return await performQuery(`
+  let createEntry = await performQuery(`
       mutation {
-        createPackage(newPackage: {
+        createModule(newPackage: {
             name: "${name}"
             apiKey: "${apiKey}"
             description: "${description}"
@@ -21,4 +24,20 @@ export async function publish(
         }
       }
   `);
+  if(createEntry.data.createModule.ok) {
+    await uploadTar(tarFile, packageDetails);
+  }
+}
+
+async function uploadTar(tarFile: any, packageDetails: PackageDetails) {
+  const blob = new Blob([tarFile]);
+  const formdata = new FormData();
+  formdata.append("file", blob);
+  formdata.append("config", JSON.stringify(packageDetails));
+  var requestOptions = {
+    method: "POST",
+    body: formdata,
+  };
+  let res = await fetch("http://localhost:8080/package", requestOptions);
+  return await res.json();
 }

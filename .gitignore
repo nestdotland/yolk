@@ -2,5 +2,5 @@ node_modules/
 yarn-error.log
 package-lock.json
 
-src/common/mod.ts 
+src/common/mod.ts
 # we don't need this

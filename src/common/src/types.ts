@@ -1,7 +1,16 @@
 export interface Result<T> {
     data: T | null;
     errors?: any;
-    error: any; 
+    error: any;
+}
+
+export interface PackageDetails {
+    api_key: string,
+    package_name: string,
+    wallet: string,
+    entry: string,
+    upload: boolean,
+    version: string,
 }
 
 export interface User {

@@ -1,0 +1,8 @@
+{
+  "name": "testingngng",
+  "description": "testtest123",
+  "stable": false,
+  "files": [
+    "index.ts"
+  ]
+}
