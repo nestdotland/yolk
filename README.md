@@ -12,9 +12,22 @@
 </p>
 
 > Note: This library is a work in progress until the [new API](https://github.com/nestdotland/api) for nest.land is deployed.
+
 ## yolk
 
 Yolk is nest.land's official API client library for Deno.
+
+### Import with Deno
+
+```shell script
+import * as yolk from "https://x.nest.land/yolk@0.1.0-rc4/mod.ts"
+```
+
+### Use with Node
+
+```shell script
+npm i @nestdotland/yolk
+```
 
 ## What is nest.land?
 
