@@ -18,9 +18,10 @@ publishModule({
   api_key: "haha",
   package_name: "newy_mod",
   wallet: "",
-  entry: "mod.ts",
+  entry: "index.ts",
   upload: true,
-  version: "0.1.0",
+  version: "0.3.0",
 }, {
-  "index.ts": "console.log()"
+  "index.ts": "console.log()",
+  "hello/bruh.ts": "export hey = 'asd'"
 })
