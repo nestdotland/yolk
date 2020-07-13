@@ -23,7 +23,7 @@ Yolk is nest.land's official API client library for Deno.
 import * as yolk from "https://x.nest.land/yolk@0.1.0-rc4/mod.ts"
 ```
 
-### Use with Node
+### Use with Web
 
 ```shell script
 npm i @nestdotland/yolk
