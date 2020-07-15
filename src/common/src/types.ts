@@ -4,6 +4,11 @@ export interface Result<T> {
     error: any;
 }
 
+export interface NewUser {
+  name: string;
+  password: string;
+}
+
 export interface PackageDetails {
     api_key: string,
     package_name: string,

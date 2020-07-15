@@ -147,13 +147,18 @@
         "affectsGlobalScope": false
       },
       "../src/types.ts": {
-        "version": "96a8c460423382a4b56ac92acc3887832e6eac35d2cc857f489f01722f1ab71c",
-        "signature": "c64103a560dd75cc28e9150f67339bd46d46a9474c35d118a4c9c95a2c8f9d96",
+        "version": "c0b7563fd8e04eacba8e3079cbfbf642a6adfa15918e9f5b87f1ec26552b687d",
+        "signature": "3e132151dd8668a59982c69f455ca5fbcef68d951eab0d285642ddb16380c7f7",
         "affectsGlobalScope": false
       },
       "../src/mutations/publish.ts": {
         "version": "8b3282df6d6aec0dcb0bc8506b4b9f2b9b160d2ca74027447dadca0416fc0ecb",
         "signature": "fce43f29dcda0469fc78f77d76ad345ba58922686346ea2906f73b6a78127883",
+        "affectsGlobalScope": false
+      },
+      "../src/mutations/user.ts": {
+        "version": "3f24fe37af8fbe676ec9a72850365fcb61bf3b12f26e9652f3e902feddc01626",
+        "signature": "25a49a0c1c0f085b6ccab0aa1741694f46f427ca9218ddb290d323c4329ca219",
         "affectsGlobalScope": false
       },
       "../src/queries/user.ts": {
@@ -167,8 +172,8 @@
         "affectsGlobalScope": false
       },
       "../src/index.ts": {
-        "version": "48262e515c5fba98268c326c0d28d39646c92e5a2f22aca0fb207f1d4baed1cc",
-        "signature": "1a50ff5d51c7fbe95ce4cff6b1c71fdbce60c0b12e3d0cfd38fe17cfb6583810",
+        "version": "c48bc22a3acfd271d4a2f8526579208b85b074eb987200bfd01f90b7bf439bde",
+        "signature": "0092c8b83d5c4c21eb282e0a084627d3faad5de3c8a19c0b9f5db1f9d5d10e24",
         "affectsGlobalScope": false
       },
       "../node_modules/@types/comment-json/index.d.ts": {
@@ -1208,10 +1213,21 @@
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../src/mutations/publish.ts",
+        "../src/mutations/user.ts",
         "../src/queries/module.ts",
         "../src/queries/user.ts"
       ],
       "../src/mutations/publish.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/process.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/process.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../src/query.ts",
+        "../src/types.ts"
+      ],
+      "../src/mutations/user.ts": [
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/process.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
@@ -2011,10 +2027,14 @@
       ],
       "../src/index.ts": [
         "../src/mutations/publish.ts",
+        "../src/mutations/user.ts",
         "../src/queries/module.ts",
         "../src/queries/user.ts"
       ],
       "../src/mutations/publish.ts": [
+        "../src/types.ts"
+      ],
+      "../src/mutations/user.ts": [
         "../src/types.ts"
       ],
       "../src/queries/module.ts": [
@@ -2116,6 +2136,7 @@
       "../node_modules/typescript/lib/lib.esnext.intl.d.ts",
       "../src/index.ts",
       "../src/mutations/publish.ts",
+      "../src/mutations/user.ts",
       "../src/queries/module.ts",
       "../src/queries/user.ts",
       "../src/query.ts",

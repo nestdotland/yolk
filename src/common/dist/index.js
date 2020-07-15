@@ -12,6 +12,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 exports.__esModule = true;
 // Mutations
 __exportStar(require("./mutations/publish"), exports);
+__exportStar(require("./mutations/user"), exports);
 // Queries
 __exportStar(require("./queries/user"), exports);
 __exportStar(require("./queries/module"), exports);
