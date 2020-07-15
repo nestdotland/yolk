@@ -39,6 +39,11 @@ exports.__esModule = true;
 exports.performQuery = void 0;
 var myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
+/**
+ * Returns graphql result from the nest.land API
+ * @param {string} query
+ * @returns {Promise<Object>} A user result
+ */
 function performQuery(query) {
     return __awaiter(this, void 0, void 0, function () {
         var graphql, requestOptions, res;

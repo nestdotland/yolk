@@ -38,6 +38,11 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 exports.__esModule = true;
 exports.modules = exports.moduleByName = void 0;
 var query_1 = require("../query");
+/**
+ * Returns module info from the nest.land registry.
+ * @param {string} name
+ * @returns {Promise<Result<Module>>} A module result
+ */
 function moduleByName(name) {
     return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {
@@ -49,6 +54,10 @@ function moduleByName(name) {
     });
 }
 exports.moduleByName = moduleByName;
+/**
+ * Returns all the modules from the nest.land registry.
+ * @returns {Promise<Result<Module[]>>} A list of module results
+ */
 function modules() {
     return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {

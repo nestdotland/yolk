@@ -38,6 +38,11 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 exports.__esModule = true;
 exports.users = exports.userByName = exports.user = void 0;
 var query_1 = require("../query");
+/**
+ * Returns user info from the nest.land registry.
+ * @param {string} apiKey
+ * @returns {Promise<Result<User>>} A user result
+ */
 function user(apiKey) {
     return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {
@@ -49,6 +54,11 @@ function user(apiKey) {
     });
 }
 exports.user = user;
+/**
+ * Returns public user info from the nest.land registry.
+ * @param {string} name
+ * @returns {Promise<Result<User>>} A public user result
+ */
 function userByName(name) {
     return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {
@@ -60,6 +70,10 @@ function userByName(name) {
     });
 }
 exports.userByName = userByName;
+/**
+ * Returns all the users from the nest.land registry.
+ * @returns {Promise<Result<User[]>>} A public user result
+ */
 function users() {
     return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {

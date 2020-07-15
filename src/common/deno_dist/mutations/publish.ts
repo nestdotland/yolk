@@ -1,7 +1,12 @@
 import { performQuery } from "../query.ts";
 import { NewModule, PackageDetails } from "../types.ts";
 
-
+/**
+ * Creates a new package entry in the nest.land registry.
+ * @param {NewModule} newModule
+ * @param {any} tar
+ * @param {PackageDetails} packageDetails
+ */
 export async function publish(
   { name, apiKey, description, repository, unlisted, locked, malicious }:
     NewModule,
@@ -29,6 +34,12 @@ export async function publish(
   }
 }
 
+/**
+ * Uploads tar package
+ * @param {any} tarFile
+ * @param {packageDetails} PackageDetails
+ * @return {Promise<Object>} Upload result
+ */
 async function uploadTar(tarFile: any, packageDetails: PackageDetails) {
   const blob = new Blob([tarFile]);
   const formdata = new FormData();

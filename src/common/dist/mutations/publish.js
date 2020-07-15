@@ -38,6 +38,12 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 exports.__esModule = true;
 exports.publish = void 0;
 var query_1 = require("../query");
+/**
+ * Creates a new package entry in the nest.land registry.
+ * @param {NewModule} newModule
+ * @param {any} tar
+ * @param {PackageDetails} packageDetails
+ */
 function publish(_a, tarFile, packageDetails) {
     var name = _a.name, apiKey = _a.apiKey, description = _a.description, repository = _a.repository, unlisted = _a.unlisted, locked = _a.locked, malicious = _a.malicious;
     return __awaiter(this, void 0, void 0, function () {
@@ -58,6 +64,12 @@ function publish(_a, tarFile, packageDetails) {
     });
 }
 exports.publish = publish;
+/**
+ * Uploads tar package
+ * @param {any} tarFile
+ * @param {packageDetails} PackageDetails
+ * @return {Promise<Object>} Upload result
+ */
 function uploadTar(tarFile, packageDetails) {
     return __awaiter(this, void 0, void 0, function () {
         var blob, formdata, requestOptions, res;
