@@ -17,7 +17,9 @@ export async function moduleByName(name: string): Promise<Result<Module>> {
           repository
           latestVersion
           latestStableVersion
-          packageUploadNames
+          uploads {
+            name
+          }
           locked
           malicious
           unlisted
@@ -43,7 +45,9 @@ export async function modules(): Promise<Result<Module[]>> {
           repository
           latestVersion
           latestStableVersion
-          packageUploadNames
+          uploads {
+            name
+          }
           locked
           malicious
           unlisted

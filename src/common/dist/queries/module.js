@@ -47,7 +47,7 @@ function moduleByName(name) {
     return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, query_1.performQuery("\n      query {\n        module(name: \"" + name + "\") {\n          name\n          normalizedName\n          owner\n          description\n          repository\n          latestVersion\n          latestStableVersion\n          packageUploadNames\n          locked\n          malicious\n          unlisted\n          updatedAt\n          createdAt\n        }\n      }\n  ")];
+                case 0: return [4 /*yield*/, query_1.performQuery("\n      query {\n        module(name: \"" + name + "\") {\n          name\n          normalizedName\n          owner\n          description\n          repository\n          latestVersion\n          latestStableVersion\n          uploads {\n            name\n          }\n          locked\n          malicious\n          unlisted\n          updatedAt\n          createdAt\n        }\n      }\n  ")];
                 case 1: return [2 /*return*/, _a.sent()];
             }
         });
@@ -62,7 +62,7 @@ function modules() {
     return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, query_1.performQuery("\n      query {\n        modules {\n          name\n          normalizedName\n          owner\n          description\n          repository\n          latestVersion\n          latestStableVersion\n          packageUploadNames\n          locked\n          malicious\n          unlisted\n          updatedAt\n          createdAt\n        }\n      }\n  ")];
+                case 0: return [4 /*yield*/, query_1.performQuery("\n      query {\n        modules {\n          name\n          normalizedName\n          owner\n          description\n          repository\n          latestVersion\n          latestStableVersion\n          uploads {\n            name\n          }\n          locked\n          malicious\n          unlisted\n          updatedAt\n          createdAt\n        }\n      }\n  ")];
                 case 1: return [2 /*return*/, _a.sent()];
             }
         });
