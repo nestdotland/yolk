@@ -13,7 +13,20 @@ export async function user(apiKey: string): Promise<Result<User>> {
           name
           normalizedName
           apiKey
-          packageNames
+          modules {
+            name
+            normalizedName
+            owner
+            description
+            repository
+            latestVersion
+            latestStableVersion
+            locked
+            malicious
+            unlisted
+            updatedAt
+            createdAt
+          }
           createdAt
         }
       }
@@ -31,7 +44,20 @@ export async function userByName(name: string): Promise<Result<PublicUser>> {
         userByName(name: "${name}") {
           name
           normalizedName
-          packageNames
+          modules {
+            name
+            normalizedName
+            owner
+            description
+            repository
+            latestVersion
+            latestStableVersion
+            locked
+            malicious
+            unlisted
+            updatedAt
+            createdAt
+          }
           createdAt
         }
       }
@@ -48,7 +74,20 @@ export async function users(): Promise<Result<PublicUser[]>> {
         users {
           name
           normalizedName
-          packageNames
+          modules {
+            name
+            normalizedName
+            owner
+            description
+            repository
+            latestVersion
+            latestStableVersion
+            locked
+            malicious
+            unlisted
+            updatedAt
+            createdAt
+          }
           createdAt
         }
       }

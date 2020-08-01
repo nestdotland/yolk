@@ -19,6 +19,13 @@ export async function moduleByName(name: string): Promise<Result<Module>> {
           latestStableVersion
           uploads {
             name
+            package
+            entry
+            version
+            prefix
+            malicious
+            files
+            createdAt
           }
           locked
           malicious
@@ -47,6 +54,13 @@ export async function modules(): Promise<Result<Module[]>> {
           latestStableVersion
           uploads {
             name
+            package
+            entry
+            version
+            prefix
+            malicious
+            files
+            createdAt
           }
           locked
           malicious

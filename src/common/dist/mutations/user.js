@@ -47,7 +47,7 @@ function createUser(newUser) {
     return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, query_1.performQuery("\n      mutation {\n        createUser(newUser: {\n            name: \"" + newUser.name + "\"\n            password: \"" + newUser.password + "\"\n        }) {\n          name\n          normalizedName\n          apiKey\n          packageNames\n          createdAt\n        }\n      }\n  ")];
+                case 0: return [4 /*yield*/, query_1.performQuery("\n      mutation {\n        createUser(newUser: {\n            name: \"" + newUser.name + "\"\n            password: \"" + newUser.password + "\"\n        }) {\n          name\n          normalizedName\n          apiKey\n          createdAt\n        }\n      }\n  ")];
                 case 1: return [2 /*return*/, _a.sent()];
             }
         });
