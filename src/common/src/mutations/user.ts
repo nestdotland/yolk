@@ -16,7 +16,6 @@ export async function createUser(newUser: NewUser): Promise<Result<User>> {
           name
           normalizedName
           apiKey
-          packageNames
           createdAt
         }
       }

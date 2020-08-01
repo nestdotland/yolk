@@ -47,7 +47,7 @@ function user(apiKey) {
     return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, query_1.performQuery("\n      query {\n        user(apiKey: \"" + apiKey + "\") {\n          name\n          normalizedName\n          apiKey\n          packageNames\n          createdAt\n        }\n      }\n  ")];
+                case 0: return [4 /*yield*/, query_1.performQuery("\n      query {\n        user(apiKey: \"" + apiKey + "\") {\n          name\n          normalizedName\n          apiKey\n          modules {\n            name\n            normalizedName\n            owner\n            description\n            repository\n            latestVersion\n            latestStableVersion\n            locked\n            malicious\n            unlisted\n            updatedAt\n            createdAt\n          }\n          createdAt\n        }\n      }\n  ")];
                 case 1: return [2 /*return*/, _a.sent()];
             }
         });
@@ -63,7 +63,7 @@ function userByName(name) {
     return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, query_1.performQuery("\n      query {\n        userByName(name: \"" + name + "\") {\n          name\n          normalizedName\n          packageNames\n          createdAt\n        }\n      }\n  ")];
+                case 0: return [4 /*yield*/, query_1.performQuery("\n      query {\n        userByName(name: \"" + name + "\") {\n          name\n          normalizedName\n          modules {\n            name\n            normalizedName\n            owner\n            description\n            repository\n            latestVersion\n            latestStableVersion\n            locked\n            malicious\n            unlisted\n            updatedAt\n            createdAt\n          }\n          createdAt\n        }\n      }\n  ")];
                 case 1: return [2 /*return*/, _a.sent()];
             }
         });
@@ -78,7 +78,7 @@ function users() {
     return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, query_1.performQuery("\n      query {\n        users {\n          name\n          normalizedName\n          packageNames\n          createdAt\n        }\n      }\n  ")];
+                case 0: return [4 /*yield*/, query_1.performQuery("\n      query {\n        users {\n          name\n          normalizedName\n          modules {\n            name\n            normalizedName\n            owner\n            description\n            repository\n            latestVersion\n            latestStableVersion\n            locked\n            malicious\n            unlisted\n            updatedAt\n            createdAt\n          }\n          createdAt\n        }\n      }\n  ")];
                 case 1: return [2 /*return*/, _a.sent()];
             }
         });
