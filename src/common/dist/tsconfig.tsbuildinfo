@@ -141,39 +141,39 @@
         "signature": "89bf2b7a601b73ea4311eda9c41f86a58994fec1bee3b87c4a14d68d9adcdcbd",
         "affectsGlobalScope": true
       },
-      "../src/query.ts": {
-        "version": "bf867171368e962446df9c4a5ae5dcf2904e20c09724d9c6b33396d454a65db7",
-        "signature": "07013161bd662aa47e9093cb7bec8967fa4077dc9469b3a1d2a22a45d3258746",
-        "affectsGlobalScope": false
-      },
       "../src/types.ts": {
-        "version": "c0b7563fd8e04eacba8e3079cbfbf642a6adfa15918e9f5b87f1ec26552b687d",
-        "signature": "3e132151dd8668a59982c69f455ca5fbcef68d951eab0d285642ddb16380c7f7",
-        "affectsGlobalScope": false
-      },
-      "../src/mutations/publish.ts": {
-        "version": "8b3282df6d6aec0dcb0bc8506b4b9f2b9b160d2ca74027447dadca0416fc0ecb",
-        "signature": "fce43f29dcda0469fc78f77d76ad345ba58922686346ea2906f73b6a78127883",
-        "affectsGlobalScope": false
-      },
-      "../src/mutations/user.ts": {
-        "version": "67d57f718722e804d7be6c306aebed637cd900cbc841a9e208d5191f97352dcd",
-        "signature": "25a49a0c1c0f085b6ccab0aa1741694f46f427ca9218ddb290d323c4329ca219",
-        "affectsGlobalScope": false
-      },
-      "../src/queries/user.ts": {
-        "version": "099a36411fe118b1d55a8fbd203e51b78aa32c5170baf21cbecef10edbc9ce31",
-        "signature": "18bf1708abc12d8126e211db6cd6711d4e7bf4c0dba8c0062b7b3378e2f68943",
+        "version": "1425b36cbb03e502b309ad38ad4510bfccf2c2236cc8a43ca12868a86c5bea6b",
+        "signature": "9671ed14e53e6652f83ca1311cbdcb3ebac3f3570731221458f861c646a67459",
         "affectsGlobalScope": false
       },
       "../src/queries/module.ts": {
-        "version": "be1e7ecc88407708117599a14a66ef77e05c45e347c2635fba77e3f8543ed9aa",
-        "signature": "bf7fc51b0ac653cbdcaf5189ebed0632f0b36865f06c5afa7513cb1485694160",
+        "version": "7cf073003be19cdc5ad2ddc06aa994510d42c6130cba141a0d58ecc426fa380a",
+        "signature": "4a1958bde1b30526a63549ed8da485dd7fd655d643a49ff52227f9bfd23d4b68",
+        "affectsGlobalScope": false
+      },
+      "../src/queries/user.ts": {
+        "version": "8c0faccee5b296350e9c74a9db52dcd4a4d82e84224bbfa0464011459128e58c",
+        "signature": "0f2daf942b16fb7c3f8fa26ca8c95508a5cb5c823a8af2c2ae19661502a46880",
+        "affectsGlobalScope": false
+      },
+      "../src/mutations/user.ts": {
+        "version": "a9bda4afdfe9d58d29345512e2a4caa81e07d923c792144b3ff84d4363eb8a16",
+        "signature": "db3440639774c32efcc1f2625016bd3b64b551077cee7f5e74fa101ecc7f9e0a",
+        "affectsGlobalScope": false
+      },
+      "../src/mutations/publish.ts": {
+        "version": "5ca6fe7afbaead2cf4e38b89736644652db46a13e0b50b2bfc45283e3f2a2dac",
+        "signature": "14e814498cd7438a5b595e580a4f6dfb424b59c96d1b3a6112a98fd0504ab68c",
+        "affectsGlobalScope": false
+      },
+      "../src/query.ts": {
+        "version": "14cd753e5b293027b648721a0d838269e23f21db3a86d79a83f39c0d05a5542b",
+        "signature": "578d87a91f908e0422414efcfc7e6e616109ffb900d1da6b6fbd228af69e9b3e",
         "affectsGlobalScope": false
       },
       "../src/index.ts": {
-        "version": "c48bc22a3acfd271d4a2f8526579208b85b074eb987200bfd01f90b7bf439bde",
-        "signature": "0092c8b83d5c4c21eb282e0a084627d3faad5de3c8a19c0b9f5db1f9d5d10e24",
+        "version": "6ed23830aad3bd6ba19b38aa7af1a92320657e97f207275509a36f834d524309",
+        "signature": "0556e35177d675913d5f6ff0671929fd28b5002d6b5a94fc48ff8a53533a2a6a",
         "affectsGlobalScope": false
       },
       "../node_modules/@types/comment-json/index.d.ts": {
@@ -1212,10 +1212,8 @@
         "../node_modules/@types/node/ts3.2/process.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts",
-        "../src/mutations/publish.ts",
-        "../src/mutations/user.ts",
-        "../src/queries/module.ts",
-        "../src/queries/user.ts"
+        "../src/query.ts",
+        "../src/types.ts"
       ],
       "../src/mutations/publish.ts": [
         "../node_modules/@types/node/fs.d.ts",
@@ -1224,7 +1222,6 @@
         "../node_modules/@types/node/ts3.2/process.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts",
-        "../src/query.ts",
         "../src/types.ts"
       ],
       "../src/mutations/user.ts": [
@@ -1233,9 +1230,7 @@
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/process.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../src/query.ts",
-        "../src/types.ts"
+        "../node_modules/@types/node/util.d.ts"
       ],
       "../src/queries/module.ts": [
         "../node_modules/@types/node/fs.d.ts",
@@ -1243,9 +1238,7 @@
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/process.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../src/query.ts",
-        "../src/types.ts"
+        "../node_modules/@types/node/util.d.ts"
       ],
       "../src/queries/user.ts": [
         "../node_modules/@types/node/fs.d.ts",
@@ -1253,9 +1246,7 @@
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/process.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../src/query.ts",
-        "../src/types.ts"
+        "../node_modules/@types/node/util.d.ts"
       ],
       "../src/query.ts": [
         "../node_modules/@types/node/fs.d.ts",
@@ -1263,7 +1254,12 @@
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/process.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
-        "../node_modules/@types/node/util.d.ts"
+        "../node_modules/@types/node/util.d.ts",
+        "../src/mutations/publish.ts",
+        "../src/mutations/user.ts",
+        "../src/queries/module.ts",
+        "../src/queries/user.ts",
+        "../src/types.ts"
       ],
       "../src/types.ts": [
         "../node_modules/@types/node/fs.d.ts",
@@ -2026,21 +2022,13 @@
         "../node_modules/@types/node/util.d.ts"
       ],
       "../src/index.ts": [
-        "../src/mutations/publish.ts",
-        "../src/mutations/user.ts",
-        "../src/queries/module.ts",
-        "../src/queries/user.ts"
+        "../src/query.ts",
+        "../src/types.ts"
       ],
       "../src/mutations/publish.ts": [
         "../src/types.ts"
       ],
-      "../src/mutations/user.ts": [
-        "../src/types.ts"
-      ],
-      "../src/queries/module.ts": [
-        "../src/types.ts"
-      ],
-      "../src/queries/user.ts": [
+      "../src/query.ts": [
         "../src/types.ts"
       ],
       "../../../../../node_modules/@types/long/index.d.ts": [

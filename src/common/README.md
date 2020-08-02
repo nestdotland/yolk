@@ -17,6 +17,26 @@
 
 Yolk is nest.land's official API client library for Deno.
 
+## Usage 
+
+### Deno
+
+```typescript
+import * as yolk from "https://x.nest.land/yolk@0.2.0-rc2/mod.ts";
+```
+
+### Web
+
+```sh
+yarn add @nestdotland/yolk
+# or
+npm i @nestdotland/yolk
+```
+
+```typescript
+import * as yolk from "@nestdotland/yolk";
+```
+
 ## What is nest.land?
 
 Nest.land combines Deno with the [Arweave Blockchain](https://www.arweave.org/). With us, you can publish your Deno modules to the permaweb, where they can never be deleted. This avoids a major pitfall for web-based module imports while allowing the developer to maximize on the potential of Deno's import design!
