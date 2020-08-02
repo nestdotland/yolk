@@ -172,8 +172,8 @@
         "affectsGlobalScope": false
       },
       "../src/index.ts": {
-        "version": "4c39b9f6920a9b265b02974e4c349f9e778fc038198e04a6cedc9432fa256ff5",
-        "signature": "4c39b9f6920a9b265b02974e4c349f9e778fc038198e04a6cedc9432fa256ff5",
+        "version": "6ed23830aad3bd6ba19b38aa7af1a92320657e97f207275509a36f834d524309",
+        "signature": "0556e35177d675913d5f6ff0671929fd28b5002d6b5a94fc48ff8a53533a2a6a",
         "affectsGlobalScope": false
       },
       "../node_modules/@types/comment-json/index.d.ts": {
@@ -1212,7 +1212,8 @@
         "../node_modules/@types/node/ts3.2/process.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts",
-        "../src/query.ts"
+        "../src/query.ts",
+        "../src/types.ts"
       ],
       "../src/mutations/publish.ts": [
         "../node_modules/@types/node/fs.d.ts",
@@ -2021,7 +2022,8 @@
         "../node_modules/@types/node/util.d.ts"
       ],
       "../src/index.ts": [
-        "../src/query.ts"
+        "../src/query.ts",
+        "../src/types.ts"
       ],
       "../src/mutations/publish.ts": [
         "../src/types.ts"
