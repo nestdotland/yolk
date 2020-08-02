@@ -1,13 +1,5 @@
-import { performQuery } from "../query";
-import { Module, Result } from "../types";
-
-/**
- * Returns module info from the nest.land registry.
- * @param {string} name
- * @returns {Promise<Result<Module>>} A module result
- */
-export async function moduleByName(name: string): Promise<Result<Module>> {
-  return await performQuery(`
+export function moduleByName(name: string): string {
+  return (`
       query {
         module(name: "${name}") {
           name
@@ -37,12 +29,8 @@ export async function moduleByName(name: string): Promise<Result<Module>> {
   `);
 }
 
-/**
- * Returns all the modules from the nest.land registry.
- * @returns {Promise<Result<Module[]>>} A list of module results
- */
-export async function modules(): Promise<Result<Module[]>> {
-  return await performQuery(`
+export function modules(): string {
+  return (`
       query {
         modules {
           name
@@ -53,6 +41,37 @@ export async function modules(): Promise<Result<Module[]>> {
           latestVersion
           latestStableVersion
           uploads {
+            name
+            package
+            entry
+            version
+            prefix
+            malicious
+            files
+            createdAt
+          }
+          locked
+          malicious
+          unlisted
+          updatedAt
+          createdAt
+        }
+      }
+  `);
+}
+
+export function moduleUploadByVersion(name: string, version: string): string {
+  return (`
+      query {
+        module(name: ${name}) {
+          name
+          normalizedName
+          owner
+          description
+          repository
+          latestVersion
+          latestStableVersion
+          upload(version: ${version}) {
             name
             package
             entry

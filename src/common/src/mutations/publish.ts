@@ -1,19 +1,10 @@
-import { performQuery } from "../query";
-import { NewModule, PackageDetails } from "../types";
+import { NewModule } from "../types";
 
-/**
- * Creates a new package entry in the nest.land registry.
- * @param {NewModule} newModule
- * @param {any} tar
- * @param {PackageDetails} packageDetails
- */
-export async function publish(
+export function publish(
   { name, apiKey, description, repository, unlisted, locked, malicious }:
     NewModule,
-    tarFile: any,
-    packageDetails: PackageDetails
-) {
-  let createEntry = await performQuery(`
+): string {
+  return (`
       mutation {
         createModule(newPackage: {
             name: "${name}"
@@ -29,26 +20,4 @@ export async function publish(
         }
       }
   `);
-  if(createEntry.data.createModule.ok) {
-    await uploadTar(tarFile, packageDetails);
-  }
-}
-
-/**
- * Uploads tar package
- * @param {any} tarFile
- * @param {packageDetails} PackageDetails
- * @return {Promise<Object>} Upload result
- */
-async function uploadTar(tarFile: any, packageDetails: PackageDetails) {
-  const blob = new Blob([tarFile]);
-  const formdata = new FormData();
-  formdata.append("file", blob);
-  formdata.append("config", JSON.stringify(packageDetails));
-  var requestOptions = {
-    method: "POST",
-    body: formdata,
-  };
-  let res = await fetch("http://localhost:8080/package", requestOptions);
-  return await res.json();
 }

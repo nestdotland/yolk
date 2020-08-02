@@ -1,9 +1,10 @@
-import { modules, users, publishModule } from "./index.ts";
+import { Yolk, publishModule } from "./index.ts";
 
-let nestLandModules = await modules();
+const yolk = new Yolk();
+let nestLandModules = await yolk.modules();
 console.log(nestLandModules);
 
-let nestLandUsers = await users();
+let nestLandUsers = await yolk.users();
 console.log(nestLandUsers);
 
 publishModule({

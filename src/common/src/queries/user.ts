@@ -1,13 +1,5 @@
-import { performQuery } from "../query";
-import { User, PublicUser, Result } from "../types";
-
-/**
- * Returns user info from the nest.land registry.
- * @param {string} apiKey
- * @returns {Promise<Result<User>>} A user result
- */
-export async function user(apiKey: string): Promise<Result<User>> {
-  return await performQuery(`
+export function user(apiKey: string): string {
+  return (`
       query {
         user(apiKey: "${apiKey}") {
           name
@@ -33,13 +25,8 @@ export async function user(apiKey: string): Promise<Result<User>> {
   `);
 }
 
-/**
- * Returns public user info from the nest.land registry.
- * @param {string} name
- * @returns {Promise<Result<User>>} A public user result
- */
-export async function userByName(name: string): Promise<Result<PublicUser>> {
-  return await performQuery(`
+export function userByName(name: string): string {
+  return (`
       query {
         userByName(name: "${name}") {
           name
@@ -64,12 +51,8 @@ export async function userByName(name: string): Promise<Result<PublicUser>> {
   `);
 }
 
-/**
- * Returns all the users from the nest.land registry.
- * @returns {Promise<Result<User[]>>} A public user result
- */
-export async function users(): Promise<Result<PublicUser[]>> {
-  return await performQuery(`
+export function users(): string {
+  return (`
       query {
         users {
           name
