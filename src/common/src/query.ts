@@ -117,7 +117,7 @@ export class Yolk {
   ) {
     let createEntry = await this.execute(moduleMutation.publish(newModule));
     if (createEntry.data.createModule.ok) {
-      await this.uploadTar(tarFile, packageDetails);
+      return await this.uploadTar(tarFile, packageDetails);
     }
   }
 
@@ -138,7 +138,9 @@ export class Yolk {
     };
     let res = await fetch(`${this.url}/package`, requestOptions);
     try {
-      return await res.json();
+      return await res.clone().json();
+    } catch(e) {
+      console.error(await res.clone().text())
     }
   }
 }

@@ -9,7 +9,6 @@ export async function publishModule(
 ) {
   const tar = new Tar();
   const yolk = new Yolk();
-  console.log(files);
   for (const k in files) {
     if (files.hasOwnProperty(k)) {
       const content = new TextEncoder().encode(files[k]);
