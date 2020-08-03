@@ -18,11 +18,12 @@ publishModule({
 }, {
   api_key: "haha",
   package_name: "newy_mod",
-  wallet: "",
+  wallet: null,
   entry: "index.ts",
   upload: true,
-  version: "0.3.0",
+  version: "0.4.0",
 }, {
   "index.ts": "console.log()",
-  "hello/bruh.ts": "export hey = 'asd'"
-})
+  "hello/bruh.ts": "export hey = 'asd'",
+  "smthelse.md": "import 'index.ts'",
+});

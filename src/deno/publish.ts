@@ -2,7 +2,11 @@ import { Tar } from "https://deno.land/std/archive/tar.ts";
 import { NewModule, PackageDetails } from "../common/deno_dist/types.ts";
 import { Yolk } from "../common/deno_dist/index.ts";
 
-export async function publishModule(newModule: NewModule, packageDetails: PackageDetails, files: { [x: string]: string }) {
+export async function publishModule(
+  newModule: NewModule,
+  packageDetails: PackageDetails,
+  files: { [x: string]: string },
+) {
   const tar = new Tar();
   const yolk = new Yolk();
   console.log(files);
@@ -15,5 +19,9 @@ export async function publishModule(newModule: NewModule, packageDetails: Packag
       });
     }
   }
-  await yolk.publish(newModule, await Deno.readAll(tar.getReader()), packageDetails);
+  await yolk.publish(
+    newModule,
+    await Deno.readAll(tar.getReader()),
+    packageDetails,
+  );
 }
