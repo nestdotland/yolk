@@ -21,7 +21,7 @@ export interface NewUser {
 export interface PackageDetails {
   api_key: string;
   package_name: string;
-  wallet: string;
+  wallet: string | null;
   entry: string;
   upload: boolean;
   version: string;

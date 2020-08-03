@@ -137,6 +137,7 @@ export class Yolk {
       body: formdata,
     };
     let res = await fetch(`${this.url}/package`, requestOptions);
-    return await res.json();
+    console.log(await res.text());
+    return await res.json().catch(console.error);
   }
 }
