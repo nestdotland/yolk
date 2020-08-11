@@ -157,22 +157,22 @@
         "affectsGlobalScope": false
       },
       "../src/mutations/user.ts": {
-        "version": "a9bda4afdfe9d58d29345512e2a4caa81e07d923c792144b3ff84d4363eb8a16",
+        "version": "5f40d0260e89d0782e00017c9d44fa6de1b3fd0318e2f0c09bd4fa6b1acf1237",
         "signature": "db3440639774c32efcc1f2625016bd3b64b551077cee7f5e74fa101ecc7f9e0a",
         "affectsGlobalScope": false
       },
       "../src/mutations/publish.ts": {
-        "version": "5ca6fe7afbaead2cf4e38b89736644652db46a13e0b50b2bfc45283e3f2a2dac",
+        "version": "26584512b2ecb3b8943e79deb11c51288874269283f97eafb16b3285586745b1",
         "signature": "14e814498cd7438a5b595e580a4f6dfb424b59c96d1b3a6112a98fd0504ab68c",
         "affectsGlobalScope": false
       },
       "../src/query.ts": {
-        "version": "dec89437cb438fff53a9abd400d16a43e25ccbd4ddc64772e59fab217b99313f",
+        "version": "ff43d11265ae28d9dd2a0b0e33b903eac3dc92a75a649a3e3a3b7092e008d178",
         "signature": "578d87a91f908e0422414efcfc7e6e616109ffb900d1da6b6fbd228af69e9b3e",
         "affectsGlobalScope": false
       },
       "../src/index.ts": {
-        "version": "6ed23830aad3bd6ba19b38aa7af1a92320657e97f207275509a36f834d524309",
+        "version": "0556e35177d675913d5f6ff0671929fd28b5002d6b5a94fc48ff8a53533a2a6a",
         "signature": "0556e35177d675913d5f6ff0671929fd28b5002d6b5a94fc48ff8a53533a2a6a",
         "affectsGlobalScope": false
       },

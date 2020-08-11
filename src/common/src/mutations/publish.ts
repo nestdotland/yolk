@@ -4,7 +4,7 @@ export function publish(
   { name, apiKey, description, repository, unlisted, locked, malicious }:
     NewModule,
 ): string {
-  return (`
+  let q = (`
       mutation {
         createModule(newPackage: {
             name: "${name}"
@@ -20,4 +20,5 @@ export function publish(
         }
       }
   `);
+  return q;
 }

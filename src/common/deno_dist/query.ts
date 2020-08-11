@@ -16,7 +16,7 @@ var myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
 
 export class Yolk {
-  public url: string = "http://localhost:8080";
+  public url: string = "http://localhost:8080/graphql";
   constructor(url?: string) {
     this.url = url || this.url;
   }
@@ -36,7 +36,8 @@ export class Yolk {
       body: graphql,
     };
     let res = await fetch(this.url, requestOptions);
-    return await res.json();
+    console.log(await res.clone().text())
+    return await res.clone().json();
   }
 
   /**
@@ -136,8 +137,8 @@ export class Yolk {
       method: "POST",
       body: formdata,
     };
-    let res = await fetch(`${this.url}/package`, requestOptions);
-    console.log(await res.text());
-    return await res.json().catch(console.error);
+    let res = await fetch(`https://x2.nest.land/package`, requestOptions);
+
+      return await res.json();
   }
 }

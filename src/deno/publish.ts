@@ -8,7 +8,8 @@ export async function publishModule(
   files: { [x: string]: string },
 ) {
   const tar = new Tar();
-  const yolk = new Yolk();
+  const yolk = new Yolk("https://x2.nest.land/graphql");
+  // const yolk = new Yolk("http://localhost:8080/graphql");
   console.log(files);
   for (const k in files) {
     if (files.hasOwnProperty(k)) {
