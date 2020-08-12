@@ -137,8 +137,9 @@ export class Yolk {
       method: "POST",
       body: formdata,
     };
-    let res = await fetch(`https://x2.nest.land/package`, requestOptions);
-
-      return await res.json();
+      // let res = await fetch(`https://x2.nest.land/package`, requestOptions);
+      let res = await fetch(`http://localhost:8080/package`, requestOptions);
+      console.log(await res.clone().text())
+      return await res.clone().json();
   }
 }

@@ -215,9 +215,9 @@ var Yolk = /** @class */ (function () {
      */
     Yolk.prototype.uploadTar = function (tarFile, packageDetails) {
         return __awaiter(this, void 0, void 0, function () {
-            var blob, formdata, requestOptions, res;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var blob, formdata, requestOptions, res, _a, _b;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
                         blob = new Blob([tarFile]);
                         formdata = new FormData();
@@ -227,11 +227,15 @@ var Yolk = /** @class */ (function () {
                             method: "POST",
                             body: formdata
                         };
-                        return [4 /*yield*/, fetch("https://x2.nest.land/package", requestOptions)];
+                        return [4 /*yield*/, fetch("http://localhost:8080/package", requestOptions)];
                     case 1:
-                        res = _a.sent();
-                        return [4 /*yield*/, res.json()];
-                    case 2: return [2 /*return*/, _a.sent()];
+                        res = _c.sent();
+                        _b = (_a = console).log;
+                        return [4 /*yield*/, res.clone().text()];
+                    case 2:
+                        _b.apply(_a, [_c.sent()]);
+                        return [4 /*yield*/, res.clone().json()];
+                    case 3: return [2 /*return*/, _c.sent()];
                 }
             });
         });
