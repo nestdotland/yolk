@@ -143,6 +143,6 @@ export class Yolk {
     if (resp.code !== 200) {
       throw new Error(resp.msg);
     }
-    return await resp;
+    return resp;
   }
 }

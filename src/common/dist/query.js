@@ -234,8 +234,7 @@ var Yolk = /** @class */ (function () {
                         if (resp.code !== 200) {
                             throw new Error(resp.msg);
                         }
-                        return [4 /*yield*/, resp];
-                    case 3: return [2 /*return*/, _a.sent()];
+                        return [2 /*return*/, resp];
                 }
             });
         });
