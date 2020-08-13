@@ -55,9 +55,9 @@ var Yolk = /** @class */ (function () {
      */
     Yolk.prototype.execute = function (query) {
         return __awaiter(this, void 0, void 0, function () {
-            var graphql, requestOptions, res, _a, _b;
-            return __generator(this, function (_c) {
-                switch (_c.label) {
+            var graphql, requestOptions, res;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
                     case 0:
                         graphql = JSON.stringify({
                             query: query,
@@ -70,13 +70,11 @@ var Yolk = /** @class */ (function () {
                         };
                         return [4 /*yield*/, fetch(this.url + "/graphql", requestOptions)];
                     case 1:
-                        res = _c.sent();
-                        _b = (_a = console).log;
-                        return [4 /*yield*/, res.clone().text()];
-                    case 2:
-                        _b.apply(_a, [_c.sent()]);
+                        res = _a.sent();
                         return [4 /*yield*/, res.clone().json()];
-                    case 3: return [2 /*return*/, _c.sent()];
+                    case 2: 
+                    // console.log(await res.clone().text());
+                    return [2 /*return*/, _a.sent()];
                 }
             });
         });
@@ -215,9 +213,9 @@ var Yolk = /** @class */ (function () {
      */
     Yolk.prototype.uploadTar = function (tarFile, packageDetails) {
         return __awaiter(this, void 0, void 0, function () {
-            var blob, formdata, requestOptions, res, _a, _b;
-            return __generator(this, function (_c) {
-                switch (_c.label) {
+            var blob, formdata, requestOptions, res;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
                     case 0:
                         blob = new Blob([tarFile]);
                         formdata = new FormData();
@@ -229,13 +227,11 @@ var Yolk = /** @class */ (function () {
                         };
                         return [4 /*yield*/, fetch(this.url + "/package", requestOptions)];
                     case 1:
-                        res = _c.sent();
-                        _b = (_a = console).log;
-                        return [4 /*yield*/, res.clone().text()];
-                    case 2:
-                        _b.apply(_a, [_c.sent()]);
+                        res = _a.sent();
                         return [4 /*yield*/, res.clone().json()];
-                    case 3: return [2 /*return*/, _c.sent()];
+                    case 2: 
+                    // console.log(await res.clone().text());
+                    return [2 /*return*/, _a.sent()];
                 }
             });
         });
