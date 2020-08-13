@@ -98,7 +98,7 @@ var Yolk = /** @class */ (function () {
     };
     /**
      * Returns all the modules from the nest.land registry.
-     * @returns {Promise<Result<Module[]>>} A list of module results
+     * @returns {Promise<Result<Module>>} A list of module results
      */
     Yolk.prototype.moduleByName = function (name) {
         return __awaiter(this, void 0, void 0, function () {
