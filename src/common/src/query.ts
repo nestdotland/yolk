@@ -53,7 +53,7 @@ export class Yolk {
    * Returns all the modules from the nest.land registry.
    * @returns {Promise<Result<Module[]>>} A list of module results
    */
-  async moduleByName(name: string): Promise<Result<Module[]>> {
+  async moduleByName(name: string): Promise<Result<Module>> {
     return await this.execute(module.moduleByName(name));
   }
 
