@@ -213,7 +213,7 @@ var Yolk = /** @class */ (function () {
      */
     Yolk.prototype.uploadTar = function (tarFile, packageDetails) {
         return __awaiter(this, void 0, void 0, function () {
-            var blob, formdata, requestOptions, res;
+            var blob, formdata, requestOptions, res, resp;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
@@ -229,9 +229,13 @@ var Yolk = /** @class */ (function () {
                     case 1:
                         res = _a.sent();
                         return [4 /*yield*/, res.clone().json()];
-                    case 2: 
-                    // console.log(await res.clone().text());
-                    return [2 /*return*/, _a.sent()];
+                    case 2:
+                        resp = _a.sent();
+                        if (resp.code !== 200) {
+                            throw new Error(resp.msg);
+                        }
+                        return [4 /*yield*/, resp];
+                    case 3: return [2 /*return*/, _a.sent()];
                 }
             });
         });

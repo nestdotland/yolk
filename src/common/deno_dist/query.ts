@@ -139,6 +139,10 @@ export class Yolk {
     };
     let res = await fetch(`${this.url}/package`, requestOptions);
     // console.log(await res.clone().text());
-    return await res.clone().json();
+    let resp = await res.clone().json();
+    if (resp.code !== 200) {
+      throw new Error(resp.msg);
+    }
+    return await resp;
   }
 }
