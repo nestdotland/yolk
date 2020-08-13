@@ -2,14 +2,46 @@ import { Tar } from "https://deno.land/std/archive/tar.ts";
 import { NewModule, PackageDetails } from "../common/deno_dist/types.ts";
 import { Yolk } from "../common/deno_dist/index.ts";
 
-export async function publishModule(
+interface StringMap {
+  [x: string]: string;
+}
+
+export interface PublishModule {
+  name: string;
+  apiKey: string;
+  description: string;
+  repository: string;
+  unlisted: boolean;
+  locked: boolean;
+  malicious: boolean;
+  // TODO(@divy-work): add jwk interface as wallet type
+  wallet: any | null;
+  entry: string;
+  upload: boolean;
+  version: string;
+}
+
+export async function publish(
+  module: PublishModule,
+  files: StringMap,
+  endpoint?: string,
+): Promise<void> {
+  return await publishModule(
+    module,
+    { ...module, api_key: module.apiKey, package_name: module.name },
+    files,
+    endpoint || "http://localhost:8080",
+  );
+}
+
+async function publishModule(
   newModule: NewModule,
   packageDetails: PackageDetails,
-  files: { [x: string]: string },
+  files: StringMap,
+  endpoint: string,
 ) {
   const tar = new Tar();
-  // const yolk = new Yolk("https://x2.nest.land/graphql");
-  const yolk = new Yolk("http://localhost:8080/graphql");
+  const yolk = new Yolk(endpoint);
   console.log(files);
   for (const k in files) {
     if (files.hasOwnProperty(k)) {
@@ -20,7 +52,7 @@ export async function publishModule(
       });
     }
   }
-  await yolk.publish(
+  return await yolk.publish(
     newModule,
     await Deno.readAll(tar.getReader()),
     packageDetails,

@@ -16,15 +16,15 @@ var myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
 
 export class Yolk {
-  public url: string = "http://localhost:8080/graphql";
+  public url: string = "http://localhost:8080";
   constructor(url?: string) {
     this.url = url || this.url;
   }
   /**
-  * Returns graphql result from the nest.land API
-  * @param {string} query
-  * @returns {Promise<Object>} A user result
-  */
+   * Returns graphql result from the nest.land API
+   * @param {string} query
+   * @returns {Promise<Object>} A user result
+   */
   async execute(query: string) {
     var graphql = JSON.stringify({
       query,
@@ -35,8 +35,8 @@ export class Yolk {
       headers: myHeaders,
       body: graphql,
     };
-    let res = await fetch(this.url, requestOptions);
-    console.log(await res.clone().text())
+    let res = await fetch(`${this.url}/graphql`, requestOptions);
+    console.log(await res.clone().text());
     return await res.clone().json();
   }
 
@@ -137,9 +137,9 @@ export class Yolk {
       method: "POST",
       body: formdata,
     };
-      // let res = await fetch(`https://x2.nest.land/package`, requestOptions);
-      let res = await fetch(`http://localhost:8080/package`, requestOptions);
-      console.log(await res.clone().text())
-      return await res.clone().json();
+    // let res = await fetch(`https://x2.nest.land/package`, requestOptions);
+    let res = await fetch(`${this.url}/package`, requestOptions);
+    console.log(await res.clone().text());
+    return await res.clone().json();
   }
 }

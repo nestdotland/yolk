@@ -45,14 +45,14 @@ var myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
 var Yolk = /** @class */ (function () {
     function Yolk(url) {
-        this.url = "http://localhost:8080/graphql";
+        this.url = "http://localhost:8080";
         this.url = url || this.url;
     }
     /**
-    * Returns graphql result from the nest.land API
-    * @param {string} query
-    * @returns {Promise<Object>} A user result
-    */
+     * Returns graphql result from the nest.land API
+     * @param {string} query
+     * @returns {Promise<Object>} A user result
+     */
     Yolk.prototype.execute = function (query) {
         return __awaiter(this, void 0, void 0, function () {
             var graphql, requestOptions, res, _a, _b;
@@ -68,7 +68,7 @@ var Yolk = /** @class */ (function () {
                             headers: myHeaders,
                             body: graphql
                         };
-                        return [4 /*yield*/, fetch(this.url, requestOptions)];
+                        return [4 /*yield*/, fetch(this.url + "/graphql", requestOptions)];
                     case 1:
                         res = _c.sent();
                         _b = (_a = console).log;
@@ -227,7 +227,7 @@ var Yolk = /** @class */ (function () {
                             method: "POST",
                             body: formdata
                         };
-                        return [4 /*yield*/, fetch("http://localhost:8080/package", requestOptions)];
+                        return [4 /*yield*/, fetch(this.url + "/package", requestOptions)];
                     case 1:
                         res = _c.sent();
                         _b = (_a = console).log;
