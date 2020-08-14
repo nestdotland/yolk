@@ -2,7 +2,7 @@
  * A Common query result interface.
  */
 export interface Result<T> {
-  data: T | null;
+  data: { [x: string]: T | null } | T;
   errors?: any;
   error?: any;
 }
