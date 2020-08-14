@@ -14,7 +14,6 @@ export interface PublishModule {
   unlisted: boolean;
   locked: boolean;
   malicious: boolean;
-  // TODO(@divy-work): add jwk interface as wallet type
   wallet: JWKInterface | null;
   entry: string;
   upload: boolean;
