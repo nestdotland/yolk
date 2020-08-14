@@ -115,11 +115,12 @@ export class Yolk {
     newModule: NewModule,
     tarFile: any,
     packageDetails: PackageDetails,
-  ) {
+  ): Promise<{ code: number; msg: string } | null> {
     let createEntry = await this.execute(moduleMutation.publish(newModule));
     if (createEntry.data.createModule.ok) {
-      await this.uploadTar(tarFile, packageDetails);
+      return await this.uploadTar(tarFile, packageDetails);
     }
+    return null;
   }
 
   /**
@@ -128,7 +129,10 @@ export class Yolk {
    * @param {packageDetails} PackageDetails
    * @return {Promise<Object>} Upload result
    */
-  async uploadTar(tarFile: any, packageDetails: PackageDetails) {
+  async uploadTar(
+    tarFile: any,
+    packageDetails: PackageDetails,
+  ): Promise<{ code: number; msg: string }> {
     const blob = new Blob([tarFile]);
     const formdata = new FormData();
     formdata.append("file", blob);
@@ -138,8 +142,14 @@ export class Yolk {
       body: formdata,
     };
     let res = await fetch(`${this.url}/package`, requestOptions);
-    // console.log(await res.clone().text());
-    let resp = await res.clone().json();
+    let resp: { code: number; msg: string };
+    try {
+      resp = await res.clone().json();
+    } catch (e) {
+      throw new Error(
+        `Server responded with an error. ${await res.clone().text()}`,
+      );
+    }
     if (resp.code !== 200) {
       throw new Error(resp.msg);
     }

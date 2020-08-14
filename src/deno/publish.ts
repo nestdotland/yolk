@@ -25,7 +25,7 @@ export async function publish(
   module: PublishModule,
   files: StringMap,
   endpoint?: string,
-): Promise<void> {
+): Promise<{ code: number; msg: string } | null> {
   return await publishModule(
     module,
     { ...module, api_key: module.apiKey, package_name: module.name },
@@ -39,7 +39,7 @@ async function publishModule(
   packageDetails: PackageDetails,
   files: StringMap,
   endpoint: string,
-) {
+): Promise<{ code: number; msg: string } | null> {
   const tar = new Tar();
   const yolk = new Yolk(endpoint);
   for (const k in files) {

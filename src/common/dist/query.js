@@ -197,10 +197,8 @@ var Yolk = /** @class */ (function () {
                         createEntry = _a.sent();
                         if (!createEntry.data.createModule.ok) return [3 /*break*/, 3];
                         return [4 /*yield*/, this.uploadTar(tarFile, packageDetails)];
-                    case 2:
-                        _a.sent();
-                        _a.label = 3;
-                    case 3: return [2 /*return*/];
+                    case 2: return [2 /*return*/, _a.sent()];
+                    case 3: return [2 /*return*/, null];
                 }
             });
         });
@@ -213,9 +211,9 @@ var Yolk = /** @class */ (function () {
      */
     Yolk.prototype.uploadTar = function (tarFile, packageDetails) {
         return __awaiter(this, void 0, void 0, function () {
-            var blob, formdata, requestOptions, res, resp;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var blob, formdata, requestOptions, res, resp, e_1, _a, _b;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
                         blob = new Blob([tarFile]);
                         formdata = new FormData();
@@ -227,10 +225,21 @@ var Yolk = /** @class */ (function () {
                         };
                         return [4 /*yield*/, fetch(this.url + "/package", requestOptions)];
                     case 1:
-                        res = _a.sent();
-                        return [4 /*yield*/, res.clone().json()];
+                        res = _c.sent();
+                        _c.label = 2;
                     case 2:
-                        resp = _a.sent();
+                        _c.trys.push([2, 4, , 6]);
+                        return [4 /*yield*/, res.clone().json()];
+                    case 3:
+                        resp = _c.sent();
+                        return [3 /*break*/, 6];
+                    case 4:
+                        e_1 = _c.sent();
+                        _a = Error.bind;
+                        _b = "Server responded with an error. ";
+                        return [4 /*yield*/, res.clone().text()];
+                    case 5: throw new (_a.apply(Error, [void 0, _b + (_c.sent())]))();
+                    case 6:
                         if (resp.code !== 200) {
                             throw new Error(resp.msg);
                         }
