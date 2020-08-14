@@ -1,6 +1,6 @@
 import { Tar } from "https://deno.land/std/archive/tar.ts";
 import { NewModule, PackageDetails } from "../common/deno_dist/types.ts";
-import { Yolk } from "../common/deno_dist/index.ts";
+import { Yolk, JWKInterface } from "../common/deno_dist/index.ts";
 
 interface StringMap {
   [x: string]: string;
@@ -15,7 +15,7 @@ export interface PublishModule {
   locked: boolean;
   malicious: boolean;
   // TODO(@divy-work): add jwk interface as wallet type
-  wallet: any | null;
+  wallet: JWKInterface | null;
   entry: string;
   upload: boolean;
   version: string;

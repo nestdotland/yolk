@@ -21,7 +21,7 @@ export interface NewUser {
 export interface PackageDetails {
   api_key: string;
   package_name: string;
-  wallet: any | null;
+  wallet: JWKInterface | null;
   entry: string;
   upload: boolean;
   version: string;
@@ -92,4 +92,24 @@ export interface PublicUser {
   normalizedName?: string;
   modules?: Module[];
   createdAt?: string;
+}
+/**
+ * An arweave JWK public interface
+ */
+export interface JWKPublicInterface {
+  kty: string;
+  e: string;
+  n: string;
+}
+
+/**
+ * An arweave keyfile interface
+ */
+export interface JWKInterface extends JWKPublicInterface {
+  d?: string;
+  p?: string;
+  q?: string;
+  dp?: string;
+  dq?: string;
+  qi?: string;
 }
