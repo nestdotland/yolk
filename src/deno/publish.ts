@@ -18,6 +18,8 @@ export interface PublishModule {
   entry: string;
   upload: boolean;
   version: string;
+  stable: boolean;
+  latest: boolean;
 }
 
 export async function publish(

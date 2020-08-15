@@ -25,6 +25,8 @@ export interface PackageDetails {
   entry: string;
   upload: boolean;
   version: string;
+  stable: boolean;
+  latest: boolean;
 }
 
 /**
