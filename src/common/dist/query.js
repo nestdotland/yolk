@@ -45,19 +45,19 @@ var myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
 var Yolk = /** @class */ (function () {
     function Yolk(url) {
-        this.url = "http://localhost:8080/graphql";
+        this.url = "http://localhost:8080";
         this.url = url || this.url;
     }
     /**
-    * Returns graphql result from the nest.land API
-    * @param {string} query
-    * @returns {Promise<Object>} A user result
-    */
+     * Returns graphql result from the nest.land API
+     * @param {string} query
+     * @returns {Promise<Object>} A user result
+     */
     Yolk.prototype.execute = function (query) {
         return __awaiter(this, void 0, void 0, function () {
-            var graphql, requestOptions, res, _a, _b;
-            return __generator(this, function (_c) {
-                switch (_c.label) {
+            var graphql, requestOptions, res;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
                     case 0:
                         graphql = JSON.stringify({
                             query: query,
@@ -68,15 +68,13 @@ var Yolk = /** @class */ (function () {
                             headers: myHeaders,
                             body: graphql
                         };
-                        return [4 /*yield*/, fetch(this.url, requestOptions)];
+                        return [4 /*yield*/, fetch(this.url + "/graphql", requestOptions)];
                     case 1:
-                        res = _c.sent();
-                        _b = (_a = console).log;
-                        return [4 /*yield*/, res.clone().text()];
-                    case 2:
-                        _b.apply(_a, [_c.sent()]);
+                        res = _a.sent();
                         return [4 /*yield*/, res.clone().json()];
-                    case 3: return [2 /*return*/, _c.sent()];
+                    case 2: 
+                    // console.log(await res.clone().text());
+                    return [2 /*return*/, _a.sent()];
                 }
             });
         });
@@ -98,7 +96,7 @@ var Yolk = /** @class */ (function () {
     };
     /**
      * Returns all the modules from the nest.land registry.
-     * @returns {Promise<Result<Module[]>>} A list of module results
+     * @returns {Promise<Result<Module>>} A list of module results
      */
     Yolk.prototype.moduleByName = function (name) {
         return __awaiter(this, void 0, void 0, function () {
@@ -199,10 +197,8 @@ var Yolk = /** @class */ (function () {
                         createEntry = _a.sent();
                         if (!createEntry.data.createModule.ok) return [3 /*break*/, 3];
                         return [4 /*yield*/, this.uploadTar(tarFile, packageDetails)];
-                    case 2:
-                        _a.sent();
-                        _a.label = 3;
-                    case 3: return [2 /*return*/];
+                    case 2: return [2 /*return*/, _a.sent()];
+                    case 3: return [2 /*return*/, null];
                 }
             });
         });
@@ -215,9 +211,9 @@ var Yolk = /** @class */ (function () {
      */
     Yolk.prototype.uploadTar = function (tarFile, packageDetails) {
         return __awaiter(this, void 0, void 0, function () {
-            var blob, formdata, requestOptions, res;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var blob, formdata, requestOptions, res, resp, e_1, _a, _b;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
                         blob = new Blob([tarFile]);
                         formdata = new FormData();
@@ -227,11 +223,27 @@ var Yolk = /** @class */ (function () {
                             method: "POST",
                             body: formdata
                         };
-                        return [4 /*yield*/, fetch("https://x2.nest.land/package", requestOptions)];
+                        return [4 /*yield*/, fetch(this.url + "/package", requestOptions)];
                     case 1:
-                        res = _a.sent();
-                        return [4 /*yield*/, res.json()];
-                    case 2: return [2 /*return*/, _a.sent()];
+                        res = _c.sent();
+                        _c.label = 2;
+                    case 2:
+                        _c.trys.push([2, 4, , 6]);
+                        return [4 /*yield*/, res.clone().json()];
+                    case 3:
+                        resp = _c.sent();
+                        return [3 /*break*/, 6];
+                    case 4:
+                        e_1 = _c.sent();
+                        _a = Error.bind;
+                        _b = "Server responded with an error. ";
+                        return [4 /*yield*/, res.clone().text()];
+                    case 5: throw new (_a.apply(Error, [void 0, _b + (_c.sent())]))();
+                    case 6:
+                        if (resp.code !== 200) {
+                            throw new Error(resp.msg);
+                        }
+                        return [2 /*return*/, resp];
                 }
             });
         });

@@ -16,15 +16,15 @@ var myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
 
 export class Yolk {
-  public url: string = "http://localhost:8080/graphql";
+  public url: string = "http://localhost:8080";
   constructor(url?: string) {
     this.url = url || this.url;
   }
   /**
-  * Returns graphql result from the nest.land API
-  * @param {string} query
-  * @returns {Promise<Object>} A user result
-  */
+   * Returns graphql result from the nest.land API
+   * @param {string} query
+   * @returns {Promise<Object>} A user result
+   */
   async execute(query: string) {
     var graphql = JSON.stringify({
       query,
@@ -35,8 +35,8 @@ export class Yolk {
       headers: myHeaders,
       body: graphql,
     };
-    let res = await fetch(this.url, requestOptions);
-    console.log(await res.clone().text())
+    let res = await fetch(`${this.url}/graphql`, requestOptions);
+    // console.log(await res.clone().text());
     return await res.clone().json();
   }
 
@@ -51,9 +51,9 @@ export class Yolk {
 
   /**
    * Returns all the modules from the nest.land registry.
-   * @returns {Promise<Result<Module[]>>} A list of module results
+   * @returns {Promise<Result<Module>>} A list of module results
    */
-  async moduleByName(name: string): Promise<Result<Module[]>> {
+  async moduleByName(name: string): Promise<Result<Module>> {
     return await this.execute(module.moduleByName(name));
   }
 
@@ -115,11 +115,12 @@ export class Yolk {
     newModule: NewModule,
     tarFile: any,
     packageDetails: PackageDetails,
-  ) {
+  ): Promise<{ code: number; msg: string } | null> {
     let createEntry = await this.execute(moduleMutation.publish(newModule));
     if (createEntry.data.createModule.ok) {
-      await this.uploadTar(tarFile, packageDetails);
+      return await this.uploadTar(tarFile, packageDetails);
     }
+    return null;
   }
 
   /**
@@ -128,7 +129,10 @@ export class Yolk {
    * @param {packageDetails} PackageDetails
    * @return {Promise<Object>} Upload result
    */
-  async uploadTar(tarFile: any, packageDetails: PackageDetails) {
+  async uploadTar(
+    tarFile: any,
+    packageDetails: PackageDetails,
+  ): Promise<{ code: number; msg: string }> {
     const blob = new Blob([tarFile]);
     const formdata = new FormData();
     formdata.append("file", blob);
@@ -137,8 +141,18 @@ export class Yolk {
       method: "POST",
       body: formdata,
     };
-    let res = await fetch(`https://x2.nest.land/package`, requestOptions);
-
-      return await res.json();
+    let res = await fetch(`${this.url}/package`, requestOptions);
+    let resp: { code: number; msg: string };
+    try {
+      resp = await res.clone().json();
+    } catch (e) {
+      throw new Error(
+        `Server responded with an error. ${await res.clone().text()}`,
+      );
+    }
+    if (resp.code !== 200) {
+      throw new Error(resp.msg);
+    }
+    return resp;
   }
 }

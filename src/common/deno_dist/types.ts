@@ -2,7 +2,7 @@
  * A Common query result interface.
  */
 export interface Result<T> {
-  data: T | null;
+  data: { [x: string]: T | null } | T;
   errors?: any;
   error?: any;
 }
@@ -21,10 +21,12 @@ export interface NewUser {
 export interface PackageDetails {
   api_key: string;
   package_name: string;
-  wallet: string | null;
+  wallet: JWKInterface | null;
   entry: string;
   upload: boolean;
   version: string;
+  stable: boolean;
+  latest: boolean;
 }
 
 /**
@@ -92,4 +94,24 @@ export interface PublicUser {
   normalizedName?: string;
   modules?: Module[];
   createdAt?: string;
+}
+/**
+ * An arweave JWK public interface
+ */
+export interface JWKPublicInterface {
+  kty: string;
+  e: string;
+  n: string;
+}
+
+/**
+ * An arweave keyfile interface
+ */
+export interface JWKInterface extends JWKPublicInterface {
+  d?: string;
+  p?: string;
+  q?: string;
+  dp?: string;
+  dq?: string;
+  qi?: string;
 }
